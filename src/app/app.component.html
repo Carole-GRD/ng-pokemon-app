@@ -1,11 +1,30 @@
 <h1>Liste de Pokémons</h1>
 
+<!-- (keyup.backspace)="pokemonSelected = undefined" -->
+<!-- (keyup.enter)="selectPokemon(input.value)" -->
 <input 
     #input
-    (keyup.enter)="selectPokemon(input.value)"
+    (keyup)="selectPokemon(input.value)"
     type="number" 
 >
-<p>Vous avez sélectionné le pokémon : {{ pokemonSelected?.name }}</p>
+
+
+<!-- <p *ngIf="!pokemonSelected || pokemonSelected == undefined">
+Aucun pokémon n'a été sélectionné !
+</p>
+<p *ngIf="pokemonSelected">
+    Vous avez sélectionné le pokémon : {{ pokemonSelected.name }}
+</p> -->
+@if (pokemonSelected && pokemonSelected !== null) {
+    <p>
+        Vous avez sélectionné le pokémon : {{ pokemonSelected.name }}
+    </p>
+} 
+@else {
+    <p>
+        Aucun Pokemon n'a été sélectionné !
+    </p>
+}
 
 <p>{{ pokemonList[0].name }}</p>
 <p>{{ pokemonList[1].name }}</p>

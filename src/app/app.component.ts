@@ -12,7 +12,7 @@ import { Pokemon } from './pokemon';
 })
 export class AppComponent implements OnInit {
   pokemonList: Pokemon[] = POKEMONS;
-  pokemonSelected: Pokemon | undefined;
+  pokemonSelected: Pokemon | null;
 
   ngOnInit() {
     console.table(this.pokemonList);
@@ -25,10 +25,13 @@ export class AppComponent implements OnInit {
       console.log(`Vous avez choisi ${pokemon.name}`);
       this.pokemonSelected = pokemon;
     }
+    else if (pokemonId === "") {
+      this.pokemonSelected = null;
+      console.warn("Backspace");
+    }
     else {
-      console.error(`Aucun pokémon trouvé avec l'identifiant ${pokemonId}`);
       console.error("Vous avez demandé un pokémon qui n'existe pas.");
-      this.pokemonSelected = pokemon;
+      this.pokemonSelected = null;
     }
   }
 }
