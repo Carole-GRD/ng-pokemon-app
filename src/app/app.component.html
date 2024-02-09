@@ -4,13 +4,14 @@
 <!-- (keyup.enter)="selectPokemon(input.value)" -->
 <input 
     #input
-    (keyup)="selectPokemon(input.value)"
+    (keyup.enter)="selectPokemon(input.value)"
+    (keyup.backspace)="selectPokemon(input.value)"
     type="number" 
 >
 
 
-<!-- <p *ngIf="!pokemonSelected || pokemonSelected == undefined">
-Aucun pokémon n'a été sélectionné !
+<!-- <p *ngIf="!pokemonSelected || pokemonSelected === null">
+    Sélectionnez un pokémon !
 </p>
 <p *ngIf="pokemonSelected">
     Vous avez sélectionné le pokémon : {{ pokemonSelected.name }}
@@ -22,11 +23,21 @@ Aucun pokémon n'a été sélectionné !
 } 
 @else {
     <p>
-        Aucun Pokemon n'a été sélectionné !
+        Sélectionnez un pokémon !
     </p>
 }
 
-<p>{{ pokemonList[0].name }}</p>
+
+<!-- <p *ngFor="let pokemon of pokemonList">
+    {{ pokemon.name }}      
+</p> -->
+@for (pokemon of pokemonList; track pokemon) {
+    <p>
+        {{ pokemon.name }}
+    </p>
+}
+
+<!-- <p>{{ pokemonList[0].name }}</p>
 <p>{{ pokemonList[1].name }}</p>
 <p>{{ pokemonList[2].name }}</p>
 <p>{{ pokemonList[3].name }}</p>
@@ -37,6 +48,6 @@ Aucun pokémon n'a été sélectionné !
 <p>{{ pokemonList[8].name }}</p>
 <p>{{ pokemonList[9].name }}</p>
 <p>{{ pokemonList[10].name }}</p>
-<p>{{ pokemonList[11].name }}</p>
+<p>{{ pokemonList[11].name }}</p> -->
 
 <router-outlet />
