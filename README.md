@@ -32,3 +32,13 @@ Dans le fichier tsconfig.json, ajouter dans "compilerOptions" :
 ## Librairie
 
 [Materialize](https://materializecss.com/getting-started.html)
+
+
+## Liens utiles
+
+[Code source](https://angularsenior.fr/ressources-apprendre-angular)
+
+[Les Pipes d'Angular](https://angular.io/guide/pipes)
+
+[Le Pipe natif "Date"](https://angular.io/api/common/DatePipe)
+
