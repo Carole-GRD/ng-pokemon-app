@@ -9,35 +9,38 @@
 >
 
 
-@if (pokemonSelected && pokemonSelected !== null) {
-    <p>
-        Vous avez sélectionné le pokémon : {{ pokemonSelected.name }}
-    </p>
-} 
-@else {
-    <p>
-        Sélectionnez un pokémon !
-    </p>
-}
+
+<p *ngIf="pokemonSelected && pokemonSelected !== null">
+    Vous avez sélectionné le pokémon : {{ pokemonSelected.name }}
+</p>
+
+
+<p *ngIf="!pokemonSelected">
+    Sélectionnez un pokémon !
+</p>
+
 
 
 <div class="container">
     <div class="row">
-        @for (pokemon of pokemonList; track pokemon) {
-            <div class="col m4 s6">
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img [src]="pokemon.picture" alt="Image du pokémon {{pokemon.name}}">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <p>{{ pokemon.name }}</p>
-                            <p><small>{{ pokemon.created }}</small></p>
-                        </div>
+
+        <div *ngFor="let pokemon of pokemonList" class="col m4 s6">
+            <div class="card horizontal">
+
+                <div class="card-image">
+                    <img [src]="pokemon.picture" alt="Image du pokémon {{pokemon.name}}">
+                </div>
+
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{ pokemon.name }}</p>
+                        <p><small>{{ pokemon.created }}</small></p>
                     </div>
                 </div>
+
             </div>
-        }
+        </div>
+        
     </div>
 </div>
 
