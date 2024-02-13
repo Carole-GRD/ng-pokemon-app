@@ -4,6 +4,7 @@ import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemon';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
