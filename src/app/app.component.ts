@@ -1,42 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { POKEMONS } from './mock-pokemon-list';
-import { Pokemon } from './pokemon';
-import { CommonModule } from '@angular/common';
-import { BorderCardDirective } from './border-card.directive';
-import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
-import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
-import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, BorderCardDirective, PokemonTypeColorPipe, ListPokemonComponent, DetailPokemonComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styles: [],
 })
-export class AppComponent implements OnInit {
-  pokemonList: Pokemon[] = POKEMONS;
-  pokemonSelected: Pokemon | null;
-
-  ngOnInit() {
-    console.table(this.pokemonList);
-  }
-
-  selectPokemon(pokemonId: string) {
-    const pokemon: Pokemon | undefined = this.pokemonList.find(p => p.id === +pokemonId);
-
-    if (pokemon) {
-      console.log(`Vous avez choisi ${pokemon.name}`);
-      this.pokemonSelected = pokemon;
-    }
-    else if (pokemonId === "") {
-      this.pokemonSelected = null;
-      console.warn("Backspace");
-    }
-    else {
-      console.error("Vous avez demandé un pokémon qui n'existe pas.");
-      this.pokemonSelected = null;
-    }
-  }
-}
+export class AppComponent {}
