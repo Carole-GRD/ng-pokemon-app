@@ -12,6 +12,7 @@ Ce projet a été généré avec [Angular CLI](https://github.com/angular/angula
 ng new ng-pokemon-app --minimal --style=css
 ```
 
+
 Il existe d'autres options comme par exemple :
 
 ```js
@@ -28,6 +29,30 @@ Dans le fichier tsconfig.json, ajouter dans "compilerOptions" :
     // ...
 }
 ```
+
+
+## Commandes CLI
+
+### Composant 
+```js
+ng generate component list-pokemon
+```
+ATTENTION : lorsqu'on a ajouté l'option --minimal à la création du projet, il faut ajouter l'option --inline-template=false
+```js
+ng generate component list-pokemon --inline-template=false
+```
+
+### Directive
+```js
+ng generate directive border-card
+```
+
+### Pipe 
+```js
+ng generate pipe pokemon-type-color
+```
+
+
 
 ## Librairie
 
