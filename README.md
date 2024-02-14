@@ -52,6 +52,11 @@ ng generate directive border-card
 ng generate pipe pokemon-type-color
 ```
 
+### Module 
+```js
+ng generate module pokemon
+```
+
 
 
 ## Librairie

@@ -4,13 +4,13 @@ import { Pokemon } from '../pokemon';
 import { CommonModule } from '@angular/common';
 import { BorderCardDirective } from '../border-card.directive';
 import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-list-pokemon',
   standalone: true,
-  imports: [CommonModule, BorderCardDirective, PokemonTypeColorPipe],
+  imports: [CommonModule, BorderCardDirective, PokemonTypeColorPipe, RouterOutlet],
   templateUrl: './list-pokemon.component.html',
   styles: ``
 })
