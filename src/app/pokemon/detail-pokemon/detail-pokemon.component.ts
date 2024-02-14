@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { POKEMONS } from '../mock-pokemon-list';
 import { Pokemon } from '../pokemon';
 import { CommonModule } from '@angular/common';
@@ -9,7 +9,7 @@ import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
 @Component({
   selector: 'app-detail-pokemon',
   standalone: true,
-  imports: [CommonModule, PokemonTypeColorPipe, RouterOutlet],
+  imports: [CommonModule, PokemonTypeColorPipe],
   templateUrl: './detail-pokemon.component.html',
   styles: ``
 })
