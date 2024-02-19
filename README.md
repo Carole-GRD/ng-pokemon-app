@@ -57,6 +57,21 @@ ng generate pipe pokemon-type-color
 ng generate module pokemon
 ```
 
+### Service
+```js
+ng generate service pokemon/pokemon
+```
+
+
+
+Pour savoir ce qu'un commande va sortir une commande mais sans le faire, on peut ajouter à la fin de la commande :
+```js
+--dry-run 
+```
+Exemple :
+```js
+ng generate service pokemon/pokemon --dry-run
+```
 
 
 ## Librairie

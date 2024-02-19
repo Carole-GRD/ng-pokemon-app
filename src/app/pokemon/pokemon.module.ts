@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
-import { BorderCardDirective } from './border-card.directive';
-import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
+
 
 
 export const pokemonRoutes: Routes = [
@@ -18,10 +17,6 @@ export const pokemonRoutes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    ListPokemonComponent,
-    DetailPokemonComponent,
-    BorderCardDirective,
-    PokemonTypeColorPipe,
     RouterModule.forChild(pokemonRoutes)
   ]
 })
