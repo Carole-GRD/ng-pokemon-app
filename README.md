@@ -84,7 +84,22 @@ ng generate service pokemon/pokemon --dry-run
 
 [Code source](https://angularsenior.fr/ressources-apprendre-angular)
 
+### Pipes
+
 [Les Pipes d'Angular](https://angular.io/guide/pipes)
 
 [Le Pipe natif "Date"](https://angular.io/api/common/DatePipe)
 
+### Formulaires
+
+[Angular Forms Guide - Template Driven and Reactive Forms](https://blog.angular-university.io/introduction-to-angular-2-forms-template-driven-vs-model-driven/)
+
+[FormsModule](https://angular.io/api/forms/FormsModule)
+
+[ReactiveFormsModule](https://angular.io/api/forms/ReactiveFormsModule)
+
+[Reactive Forms](https://angular.io/guide/reactive-forms#!)
+
+[ngForm](https://angular.io/api/forms/NgForm)
+
+[ngModel](https://angular.io/api/forms/NgModel)
