@@ -37,7 +37,8 @@ Dans le fichier tsconfig.json, ajouter dans "compilerOptions" :
 ```js
 ng generate component list-pokemon
 ```
-ATTENTION : lorsqu'on a ajouté l'option --minimal à la création du projet, il faut ajouter l'option --inline-template=false
+ATTENTION : lorsqu'on a ajouté l'option --minimal à la création du projet, 
+il faut ajouter l'option --inline-template=false pour avoir le html séparé du ts
 ```js
 ng generate component list-pokemon --inline-template=false
 ```
