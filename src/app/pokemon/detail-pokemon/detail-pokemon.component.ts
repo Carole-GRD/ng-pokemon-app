@@ -6,6 +6,7 @@ import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
 import { PokemonService } from '../pokemon.service';
 
 
+
 @Component({
   selector: 'app-detail-pokemon',
   standalone: true,
@@ -18,7 +19,7 @@ import { PokemonService } from '../pokemon.service';
 
 export class DetailPokemonComponent implements OnInit {
 
-  pokemonList: Pokemon[];
+  pokemonList: Pokemon[] = [];
   pokemon: Pokemon | undefined;
 
   constructor(
@@ -31,8 +32,14 @@ export class DetailPokemonComponent implements OnInit {
     const pokemonId: string|null = this.route.snapshot.paramMap.get('id');
 
     if (pokemonId) {
-      this.pokemon = this.pokemonService.getPokemonById(+pokemonId)
+      this.pokemonService.getPokemonById(+pokemonId)
+        .subscribe(pokemon => this.pokemon = pokemon);
     }
+  }
+
+  deletePokemon(pokemon: Pokemon) {
+    this.pokemonService.deletePokemonById(pokemon.id)
+      .subscribe(() => this.goToPokemonList());
   }
 
   goToPokemonList() {
@@ -40,6 +47,7 @@ export class DetailPokemonComponent implements OnInit {
   }
 
   goToEditPokemon(pokemon: Pokemon) {
-    this.router.navigate(['/pokemon/edit/', pokemon.id]);
+    this.router.navigate(['/pokemon/edit', pokemon.id]);
   }
+  
 }

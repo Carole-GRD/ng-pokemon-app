@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { PokemonService } from '../pokemon.service';
 
 
+
 @Component({
   selector: 'app-list-pokemon',
   standalone: true,
@@ -19,7 +20,7 @@ import { PokemonService } from '../pokemon.service';
 
 export class ListPokemonComponent implements OnInit {
 
-  pokemonList: Pokemon[];
+  pokemonList: Pokemon[] = [];
 
   constructor(
     private router: Router,
@@ -27,7 +28,8 @@ export class ListPokemonComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.pokemonList = this.pokemonService.getPokemonList();
+    this.pokemonService.getPokemonList()
+      .subscribe(pokemonList => this.pokemonList = pokemonList);
   }
 
   goToPokemon(pokemon: Pokemon) {

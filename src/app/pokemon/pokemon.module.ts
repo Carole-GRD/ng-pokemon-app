@@ -6,9 +6,14 @@ import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.componen
 import { FormsModule } from '@angular/forms';
 import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from '../in-memory-data.service';
+import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
 
 
 export const pokemonRoutes: Routes = [
+  { path: 'add', component: AddPokemonComponent },
   { path: 'edit/:id', component: EditPokemonComponent },
   { path: '', component: ListPokemonComponent },
   { path: ':id', component: DetailPokemonComponent }
@@ -21,6 +26,8 @@ export const pokemonRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule, 
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
     RouterModule.forChild(pokemonRoutes)
   ]
 })

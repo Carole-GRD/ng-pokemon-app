@@ -103,3 +103,17 @@ ng generate service pokemon/pokemon --dry-run
 [ngForm](https://angular.io/api/forms/NgForm)
 
 [ngModel](https://angular.io/api/forms/NgModel)
+
+### Programmation Réactive
+
+[RxJS](https://rxjs.dev/)
+
+[Bacon.js](https://baconjs.github.io/)
+
+
+
+## Simuler une API Web
+
+```js
+npm install angular-in-memory-web-api --save-dev
+```
