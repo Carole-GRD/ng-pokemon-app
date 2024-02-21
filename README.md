@@ -63,6 +63,11 @@ ng generate module pokemon
 ng generate service pokemon/pokemon
 ```
 
+### Guards
+```js
+ng generate guard auth
+```
+
 
 
 Pour savoir ce qu'un commande va sortir une commande mais sans le faire, on peut ajouter à la fin de la commande :
@@ -103,6 +108,12 @@ ng generate service pokemon/pokemon --dry-run
 [ngForm](https://angular.io/api/forms/NgForm)
 
 [ngModel](https://angular.io/api/forms/NgModel)
+
+### Guards
+
+[Angular Guards](https://angular.io/guide/router-tutorial-toh#milestone-5-route-guards)
+
+[Qu'est-ce qu'un guard sur Angular](https://angular.fr/routing/guard.html)
 
 ### Programmation Réactive
 

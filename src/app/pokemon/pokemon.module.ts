@@ -10,13 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from '../in-memory-data.service';
 import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
-
+import { AuthGuard } from '../auth.guard';
 
 export const pokemonRoutes: Routes = [
-  { path: 'add', component: AddPokemonComponent },
-  { path: 'edit/:id', component: EditPokemonComponent },
-  { path: '', component: ListPokemonComponent },
-  { path: ':id', component: DetailPokemonComponent }
+  { path: 'edit/:id', component: EditPokemonComponent, canActivate: [AuthGuard] },
+  { path: 'add', component: AddPokemonComponent, canActivate: [AuthGuard] },
+  { path: '', component: ListPokemonComponent, canActivate: [AuthGuard] },
+  { path: ':id', component: DetailPokemonComponent, canActivate: [AuthGuard] }
 
 ];
 
