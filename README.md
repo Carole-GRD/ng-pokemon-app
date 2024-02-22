@@ -80,6 +80,12 @@ ng generate service pokemon/pokemon --dry-run
 ```
 
 
+### Compresser et compiler le projet pour qu'il soit prêt pour la production
+```js
+ng build
+```
+
+
 ## Librairie
 
 [Materialize](https://materializecss.com/getting-started.html)
@@ -121,6 +127,9 @@ ng generate service pokemon/pokemon --dry-run
 
 [Bacon.js](https://baconjs.github.io/)
 
+### Déployement
+
+[Agular.io/guide/deployment](https://angular.io/guide/deployment)
 
 
 ## Simuler une API Web
