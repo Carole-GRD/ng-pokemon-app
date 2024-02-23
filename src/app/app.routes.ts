@@ -1,12 +1,26 @@
 import { Routes } from '@angular/router';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 
 
 export const routes: Routes = [
-    { path: 'pokemon', loadChildren: () => import('./pokemon/pokemon.module').then(m => m.PokemonModule)},
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'login', component: LoginComponent },
-    { path: '**', component: PageNotFoundComponent}
+    {
+        path: 'pokemon', 
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./pokemon/pokemon.module').then(module => module.PokemonModule)
+    },
+    // {
+    //     path: '', 
+    //     canActivate: [AuthGuard],
+    //     loadChildren: () => import('./pokemon/pokemon.routes')
+    // },
+    { 
+        path: 'login', 
+        loadComponent: () => import('./login/login.component').then(module => module.LoginComponent) 
+    },
+    { 
+        path: '**', 
+        loadComponent: () => import('./page-not-found/page-not-found.component').then(module => module.PageNotFoundComponent) 
+    }
 ];
 

@@ -131,6 +131,13 @@ ng build
 
 [Agular.io/guide/deployment](https://angular.io/guide/deployment)
 
+### Monter de version
+
+[update.angular.io](https://update.angular.io/)
+
+### Standalone migration
+
+[Migrate an existing Angular project to standalone](https://angular.io/guide/standalone-migration)
 
 ## Simuler une API Web
 

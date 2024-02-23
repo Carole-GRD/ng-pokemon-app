@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../pokemon';
 import { ActivatedRoute } from '@angular/router';
 import { PokemonService } from '../pokemon.service';
-import { CommonModule } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { PokemonFormComponent } from '../pokemon-form/pokemon-form.component';
 
 
@@ -10,7 +10,7 @@ import { PokemonFormComponent } from '../pokemon-form/pokemon-form.component';
 @Component({
   selector: 'app-edit-pokemon',
   standalone: true,
-  imports: [CommonModule, PokemonFormComponent],
+  imports: [NgIf, PokemonFormComponent],
   template: `
     <h2 class="center">Editer {{ pokemon?.name }}</h2>
     <p *ngIf="pokemon" class="center">

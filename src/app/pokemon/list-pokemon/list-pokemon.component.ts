@@ -1,18 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../pokemon';
-import { CommonModule } from '@angular/common';
+import { NgFor, DatePipe } from '@angular/common';
 import { BorderCardDirective } from '../border-card.directive';
 import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
 import { Router } from '@angular/router';
 import { PokemonService } from '../pokemon.service';
 import { SearchPokemonComponent } from '../search-pokemon/search-pokemon.component';
-
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-list-pokemon',
   standalone: true,
-  imports: [CommonModule, BorderCardDirective, PokemonTypeColorPipe, SearchPokemonComponent],
+  imports: [
+    NgFor, 
+    DatePipe, 
+    BorderCardDirective, 
+    PokemonTypeColorPipe, 
+    SearchPokemonComponent, 
+    RouterLink
+  ],
   templateUrl: './list-pokemon.component.html',
   styles: ``,
   providers: [PokemonService]

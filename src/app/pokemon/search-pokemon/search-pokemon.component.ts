@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../pokemon';
 import { Router } from '@angular/router';
 import { Observable, Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
-import { CommonModule } from '@angular/common';
+import { NgFor, AsyncPipe } from '@angular/common';
 import { PokemonService } from '../pokemon.service';
 
 
 @Component({
   selector: 'app-search-pokemon',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgFor, AsyncPipe],
   templateUrl: './search-pokemon.component.html',
   styles: ``
 })

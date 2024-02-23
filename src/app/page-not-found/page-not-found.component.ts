@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-page-not-found',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterLink],
   template: `
     <div class='center'>
       <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/035.png"/>

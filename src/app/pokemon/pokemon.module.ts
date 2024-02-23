@@ -17,7 +17,6 @@ export const pokemonRoutes: Routes = [
   { path: 'add', component: AddPokemonComponent, canActivate: [AuthGuard] },
   { path: '', component: ListPokemonComponent, canActivate: [AuthGuard] },
   { path: ':id', component: DetailPokemonComponent, canActivate: [AuthGuard] }
-
 ];
 
 
