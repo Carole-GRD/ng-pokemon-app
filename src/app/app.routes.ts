@@ -5,15 +5,10 @@ import { AuthGuard } from './auth.guard';
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     {
-        path: 'pokemon', 
+        path: '', 
         canActivate: [AuthGuard],
-        loadChildren: () => import('./pokemon/pokemon.module').then(module => module.PokemonModule)
+        loadChildren: () => import('./pokemon/pokemon.routes')
     },
-    // {
-    //     path: '', 
-    //     canActivate: [AuthGuard],
-    //     loadChildren: () => import('./pokemon/pokemon.routes')
-    // },
     { 
         path: 'login', 
         loadComponent: () => import('./login/login.component').then(module => module.LoginComponent) 
