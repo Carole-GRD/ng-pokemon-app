@@ -11,10 +11,12 @@ export const routes: Routes = [
     },
     { 
         path: 'login', 
+        title: 'Login',
         loadComponent: () => import('./login/login.component').then(module => module.LoginComponent) 
     },
     { 
         path: '**', 
+        title: 'Page Not Found',
         loadComponent: () => import('./page-not-found/page-not-found.component').then(module => module.PageNotFoundComponent) 
     }
 ];

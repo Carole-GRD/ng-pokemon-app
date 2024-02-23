@@ -13,10 +13,12 @@ export default [
             },
             {
                 path: 'pokemon/add', 
+                title: 'Add Pokemon',
                 loadComponent: () => import('./add-pokemon/add-pokemon.component').then(module => module.AddPokemonComponent),
             },
             { 
                 path: 'pokemons', 
+                title: 'Podedex',
                 loadComponent: () => import('./list-pokemon/list-pokemon.component').then(module => module.ListPokemonComponent),
             },
             { 
