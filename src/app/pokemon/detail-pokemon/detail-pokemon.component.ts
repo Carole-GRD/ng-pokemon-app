@@ -5,6 +5,7 @@ import { NgIf, NgFor, DatePipe } from '@angular/common';
 import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
 import { PokemonService } from '../pokemon.service';
 import { LoaderComponent } from '../loader/loader.component';
+import { Title } from '@angular/platform-browser';
 
 
 
@@ -26,15 +27,18 @@ export class DetailPokemonComponent implements OnInit {
   constructor(
     private route: ActivatedRoute, 
     private router: Router,
-    private pokemonService: PokemonService
+    private pokemonService: PokemonService,
+    private title: Title
   ) { }
 
   ngOnInit() {
     const pokemonId: string|null = this.route.snapshot.paramMap.get('id');
 
     if (pokemonId) {
-      this.pokemonService.getPokemonById(+pokemonId)
-        .subscribe(pokemon => this.pokemon = pokemon);
+      this.pokemonService.getPokemonById(+pokemonId).subscribe(pokemon => {
+        this.pokemon = pokemon;
+        this.initTitle(pokemon);
+      });
     }
   }
 
@@ -49,6 +53,16 @@ export class DetailPokemonComponent implements OnInit {
 
   goToEditPokemon(pokemon: Pokemon) {
     this.router.navigate(['/pokemon/edit', pokemon.id]);
+  }
+
+  initTitle(pokemon: Pokemon|undefined) {
+    if (!pokemon) {
+      this.title.setTitle('Pokemon not found');
+      return;
+    }
+    else {
+      this.title.setTitle(pokemon.name);
+    }
   }
   
 }
